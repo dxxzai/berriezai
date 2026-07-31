@@ -121,6 +121,10 @@ body {
     text-decoration: none;
 
 }
+.nav-placeholder {
+    width: 130px;
+}
+
 .systembox p,
 .fieldset p,
 .messagebox p,
