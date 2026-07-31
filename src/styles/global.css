@@ -30,7 +30,7 @@ body {
 
 .reader {
     max-width: 750px;
-    margin: 60px auto;
+    margin: 10px auto;
     padding: 40px 30px;
     box-sizing: border-box;
 }
@@ -110,8 +110,9 @@ body {
 .chapter-nav {
     display: flex;
     justify-content: space-between;
-    margin-top: 80px;
+    margin: 1em;
     padding-top: 30px;
+    padding-bottom: 1em;
     border-top: 1px solid var(--border);
 }
 .chapter-nav a {
