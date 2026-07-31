@@ -1,0 +1,228 @@
+
+.list_ {
+  display: block;
+  list-style-type: decimal;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.highlight {
+  background: linear-gradient(to top, rgba(236, 250, 79, 0.8842), rgba(236, 250, 79, 0.8842) 50%, transparent 50%);
+}
+
+.oldpaper {
+	margin: 1.5em 0;
+	padding: 2em;
+	background: rgb(246, 239, 217);
+	border: 2px solid rgb(246, 239, 217);
+	color: rgb(83, 74, 60);
+	outline: 2px solid rgb(239, 229, 202);
+	outline-offset: -8px;
+	box-shadow: inset 0 0 24px rgba(80, 55, 20, 0.18), inset 0 0 3px rgba(255, 255, 255, 0.35), 0 1px 4px rgba(0, 0, 0, 0.08);
+	line-height: 1.8;
+	text-indent: 0.8em;
+	text-align: justify;
+	font-weight: bold;
+}
+.bigbox2_pixel {
+	background: rgb(29, 28, 53);
+	border: 2px solid rgb(29, 28, 53);
+	color: white;
+	padding: 2em;
+	margin: 2em;
+	line-height: 1.8em;
+	font-weight: bold;
+	text-align: justify;
+
+}
+.systembox {
+	padding: 2em;
+	margin: 2em;
+	line-height: 1.8em;
+	text-align: center;
+	font-weight: bold;
+	border: 3px solid;
+	overflow-wrap: break-word;
+	border-image: linear-gradient(to right, rgb(79, 172, 254), rgb(67, 203, 254)) 1;
+}
+.systembox_wrap {
+	text-align: justify;
+}
+.flashback {
+	color: rgb(134, 138, 142) !important;
+}
+.glitch_t2 {
+	text-shadow: -2px 0 rgb(255, 0, 85), 2px 0 rgb(0, 229, 255);
+}
+.message_wrap {
+	background: rgb(245, 245, 245);
+	padding: 1em;
+}
+.messagebox {
+	background-color: white;
+	color: gray;
+	border-radius: 0.5em;
+	padding: 2em;
+	margin: 2em;
+	border: 2px solid white;
+	line-height: 1.7em;
+}
+.fontcwrap {
+	line-height: 1.8em;
+	text-align: justify;
+	text-indent: 0.8em;
+	font-weight: bold;
+}.fontC, .fontC * {
+	color: rgb(7, 43, 65);
+}
+
+.fieldset {
+	padding: 2em;
+	margin: 2em;
+	line-height: 1.8em;
+	text-align: center;
+	border: 2px solid;
+}
+
+.news_wrapper {
+	background: rgb(255, 249, 243);
+	border: 2px rgb(255, 249, 243);
+	padding: 2em;
+	margin: 2em;
+	color: black;
+	line-height: 1.8em;
+	text-indent: 0.8em;
+	font-weight: bold;
+	text-align: justify;
+}
+.bigbox2_pixelR {
+	background: red;
+	border: 2px solid red;
+	padding: 2em;
+	margin: 2em;
+	line-height: 1.8em;
+	font-weight: bold;
+	text-align: justify;
+}
+.R_news_wrapper {
+	background: rgb(255, 64, 83);
+	border: 2px solid rgb(255, 64, 83);
+	padding: 2em;
+	margin: 2em;
+	line-height: 1.8em;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+}
+
+.hyunoh {
+	background: rgb(78, 78, 78);
+	border: 2px solid rgb(78, 78, 78);
+	margin: 2em;
+	padding: 10px;
+	line-height: 1.5em;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+}
+.redtextitty{
+  color: red;
+}
+.bigger1{
+  font-size: 1.1em
+}
+.bigger2{
+  font-size: 1.15em
+}
+.smaller1{
+  font-size: 12.6px
+}
+.glitch_b3 {
+	box-shadow: -3px -3px 0 rgb(255, 0, 85), 3px 3px 0 rgb(0, 229, 255), -6px -6px 0 rgba(255, 0, 85, 0.35), 6px 6px 0 rgba(0, 229, 255, 0.35);
+	margin: 2em;
+}
+.card_wrapper {
+	background: rgb(255, 236, 232);
+	border: 2px solid rgb(255, 236, 232);
+	color: black;
+	padding: 2em;
+	margin: 2em;
+	line-height: 1.8em;
+	text-indent: 0.8em;
+	font-weight: bold;
+	text-align: justify;
+}
+.strikethrough {
+  text-decoration: line-through
+}
+.bigbox2_monitor {
+	background: rgb(30, 30, 30);
+	color: white;
+	border: 2px solid rgb(30, 30, 30);
+	padding: 2em;
+	margin: 2em;
+	line-height: 1.8em;
+	font-weight: bold;
+	text-align: justify;
+	text-indent: 0.8em;
+}
+.panic {
+display: block;
+  font-weight: bold;
+  animation: panicShake 0.6s infinite linear;
+  
+}
+.panic_flash {
+  display: block;
+  animation: panicFlash 1.2s infinite;
+}
+.glitch_flash {
+	display: block;
+	animation: glitchFlash 1.2s infinite;
+}
+@keyframes panicShake{
+    0%   { transform:translate(0, 0); }
+    20%  { transform:translate(-0.5px, 0.5px); }
+    40%  { transform:translate(0.5px, -0.5px); }
+    60%  { transform:translate(-0.5px, 0.5px); }
+    80%  { transform:translate(0.5px, 0); }
+    100% { transform:translate(0, 0); }
+}
+@keyframes panicFlash{
+    0%, 92%, 100%{
+        text-shadow:none;
+    }
+    94%, 96%{
+        text-shadow:
+            -2px 0 #ff0055,
+             2px 0 #00e5ff,
+             0 0 6px #fff;
+    }
+}
+@keyframes glitchFlash{
+    0%,78%,100%{
+        text-shadow:
+            -2px 0 #ff0055,
+             2px 0 #00e5ff;
+    }
+
+    80%{
+        text-shadow:
+            -4px 0 #ff0055,
+             4px 0 #00e5ff,
+             0 0 6px #fff;
+    }
+
+    82%{
+        text-shadow:
+            -2px 0 #ff0055,
+             2px 0 #00e5ff;
+    }
+}
+.highlight2 {
+	background: linear-gradient(to top, rgb(250, 168, 168), rgb(250, 191, 191) 50%, transparent 50%);
+}
+

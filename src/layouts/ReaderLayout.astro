@@ -1,0 +1,25 @@
+---
+import "/Users/megan/berriezai/src/styles/global.css";
+import "/Users/megan/berriezai/src/styles/epub.css";
+import Comments from "../components/Comments.astro";
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+<head>
+    <title>{title}</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<main class="reader">
+
+    <article class="chapter">
+    <slot />
+
+    </article>
+</main>
+
+</body>
+</html>

@@ -1,16 +1,101 @@
 ---
+import { getCollection } from "astro:content";
+import ReaderLayout from "../layouts/ReaderLayout.astro";
 
+const chapters = await getCollection("chapters");
+
+const arcs = [
+  {
+    title: "I. Happy Smile Factory",
+    start: 1,
+    end: 11,
+  },
+  {
+    title: "II. Dead Zone Delivery",
+    start: 12,
+    end: 33,
+  },
+  {
+    title: "III. Clean! Clean! Clean!",
+    start: 34,
+    end: 46,
+  },
+  {
+    title: "IV. Call of the Void",
+    start: 47,
+    end: 59,
+  },
+  {
+    title: "V. Slay to Plate",
+    start: 60,
+    end: 83,
+  },
+  {
+    title: "VI. Interlude",
+    start: 84,
+    end: 97,
+  },
+  {
+    title: "VII. The Cellblock X",
+    start:98,
+    end: 123,
+  },
+];
+
+// Sort by chapter number
+chapters.sort((a, b) => a.data.chapter - b.data.chapter);
+---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Chapters</title>
+</head>
+
+<body>
+<ReaderLayout>
+<h1>I'm a Young God, Won't You Raise Me?</h1>
+<hr />
+<p>A former pro gamer who retired due to injury.<br />
+
+After retiring, I spent my days just playing games…<br />
+
+Then the game I used to play became reality.<br />
+
+But I am not a Player.<br />
+[You are the System of planet 'Earth'.]<br />
+
+It wants me to register people as characters, but I have no idea what that means.<br />
+
+For now, let’s just clear it first.<br />
+
+After all, I know everything about this game.</p>
+
+<hr />
+
+{arcs.map((arc) => (
+  <details class="arc">
+    <summary>{arc.title}</summary>
+
+    <ul class="chapter-list">
+      {chapters
+        .filter(
+          (chapter) =>
+            chapter.data.chapter >= arc.start &&
+            chapter.data.chapter <= arc.end
+        )
+        .map((chapter) => (
+          <li>
+            <a href={`/chapters/${chapter.id}`}>
+              Chapter {chapter.data.chapter}
+            </a>
+          </li>
+        ))}
+    </ul>
+  </details>
+))}
+
+
+</ReaderLayout>
+</body>
 </html>

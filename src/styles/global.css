@@ -1,0 +1,208 @@
+:root {
+    --background: #f5f1e8;
+    --paper: #fffdf8;
+    --text: #333;
+    --muted: #888;
+    --accent: #8b6f47;
+    --border: #e8dfd0;
+}
+
+
+/* Whole page */
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* Header spacing */
+
+.site-header {
+    max-width: 850px;
+    margin: 40px auto 0;
+    padding: 0 40px;
+}
+
+
+/* Main book page */
+
+.reader {
+    max-width: 750px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    box-sizing: border-box;
+}
+
+
+/* Chapter title */
+
+.reader h1 {
+
+    font-family:
+        "Noto Serif",
+        Georgia,
+        serif;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0 0 80px;
+    color: #33291f;
+}
+
+.reader h3 {
+
+    font-family:
+        "Noto Serif",
+        Georgia,
+        serif;
+    font-size: 1.5rem;
+    line-height: 2.1;
+    letter-spacing: 0.01em;
+    margin: 0 0 1.5em;
+}
+
+.reader h4 {
+
+    font-family:
+        "Noto Serif",
+        Georgia,
+        serif;
+    font-size: 1.25rem;
+    line-height: 2.1;
+    letter-spacing: 0.01em;
+    margin: 0 0 1.5em;
+}
+
+
+
+/* Main novel text */
+
+.reader p {
+
+    font-family:
+        "Noto Serif",
+        Georgia,
+        'Times New Roman',
+        serif;
+    font-size: 1.35rem;
+    line-height: 2.1;
+    letter-spacing: 0.01em;
+    margin: 0 0 1.5em;
+}
+
+.reader li {
+    font-size: 1.35rem;
+}
+
+
+
+/* Chapter separators */
+
+.reader hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 60px 0;
+}
+/* Navigation */
+.chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+}
+.chapter-nav a {
+    font-size: 1.05rem;
+    color: var(--accent);
+    text-decoration: none;
+
+}
+.systembox p,
+.fieldset p,
+.messagebox p,
+.bigbox2_pixel p,
+.R_news_wrapper p,
+.hyunoh p,
+.systembox.glitch_b3 h1,
+.card_wrapper p,
+.bigbox2_monitor p {
+    margin: 0;
+    line-height: 1.8;
+}
+.arc {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.arc summary {
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    list-style: none;
+}
+
+.arc summary::-webkit-details-marker {
+    display: none;
+}
+
+.arc summary::after {
+    content: "▸";
+    float: right;
+    transition: transform 0.2s ease;
+}
+
+.arc[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.chapter-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 1rem 1rem;
+}
+
+.chapter-list li {
+    margin: 0.5rem 0;
+}
+/* Mobile */
+
+@media(max-width:800px) {
+
+    .reader {
+
+        margin: 20px 0;
+
+        padding: 45px 25px;
+
+        border-left: none;
+
+        border-right: none;
+
+    }
+
+
+    .reader h1 {
+
+        font-size: 2rem;
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .reader p,
+    .reader li,
+    .reader {
+
+        font-size: 1.1rem;
+
+        line-height: 1.9;
+
+    }
+
+}

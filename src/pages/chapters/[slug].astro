@@ -1,0 +1,48 @@
+---
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import ReaderLayout from "../../layouts/ReaderLayout.astro";
+import Comments from "../../components/Comments.astro";
+import Navigation from "../../components/Navigation.astro";
+
+export async function getStaticPaths() {
+  const chapters = await getCollection("chapters");
+
+  return chapters.map((chapter: CollectionEntry<"chapters">) => ({
+    params: {
+      slug: chapter.id,
+    },
+    props: {
+      chapter,
+    },
+  }));
+}
+
+const { chapter } = Astro.props as {
+  chapter: CollectionEntry<"chapters">;
+};
+
+const { Content } = await render(chapter);
+const chapters = await getCollection("chapters");
+
+chapters.sort((a, b) => a.data.chapter - b.data.chapter);
+
+const currentIndex = chapters.findIndex(
+  (c) => c.data.chapter === chapter.data.chapter
+);
+
+const previous = currentIndex > 0 ? chapters[currentIndex - 1] : null;
+const next =
+  currentIndex < chapters.length - 1
+    ? chapters[currentIndex + 1]
+    : null;
+---
+
+<ReaderLayout title={chapter.data.title}>
+  <Content />
+  <Navigation chapter={chapter} />
+  <br />
+  <br />
+  <br />
+  <Comments />
+</ReaderLayout>

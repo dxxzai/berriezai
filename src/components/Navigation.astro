@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+const { chapter } = Astro.props as {
+  chapter: CollectionEntry<"chapters">;
+};
+
+const chapters = await getCollection("chapters");
+
+chapters.sort((a, b) => a.data.chapter - b.data.chapter);
+
+const currentIndex = chapters.findIndex(
+  (c) => c.data.chapter === chapter.data.chapter
+);
+
+const previous = currentIndex > 0 ? chapters[currentIndex - 1] : null;
+
+const next =
+  currentIndex < chapters.length - 1
+    ? chapters[currentIndex + 1]
+    : null;
+---
+
+<nav class="chapter-nav">
+
+  {previous ? (
+    <a href={`/chapters/${previous.id}`} class="nav-button">
+      ← Chapter {previous.data.chapter}
+    </a>
+  ) : (
+    <span></span>
+  )}
+
+  <a href="/" class="nav-button">
+    Home
+  </a>
+
+  {next ? (
+    <a href={`/chapters/${next.id}`} class="nav-button">
+      Chapter {next.data.chapter} →
+    </a>
+  ) : (
+    <span></span>
+  )}
+
+</nav>
