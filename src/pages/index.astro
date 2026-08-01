@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import ReaderLayout from "../layouts/ReaderLayout.astro";
-import Subscribe from "../components/Subscribe.astro";
 
 const chapters = await getCollection("chapters");
 
@@ -50,7 +49,7 @@ chapters.sort((a, b) => a.data.chapter - b.data.chapter);
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Chapters</title>
+  <title>I'm a Young God, Won't You Raise Me?</title>
   <link rel="icon" type="image/x-icon" href="/berriezai/public/favicon.ico">
 </head>
 
