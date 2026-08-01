@@ -12,8 +12,23 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Check for new chapter
+        id: chapter
+        run: |
+          NEW_FILE=$(git diff --name-status HEAD^ HEAD | grep "^A.*src/content/chapters/chapter-" || true)
+
+          if [ -n "$NEW_FILE" ]; then
+            echo "new_chapter=true" >> $GITHUB_OUTPUT
+            echo "$NEW_FILE"
+          else
+            echo "new_chapter=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Send newsletter
+        if: steps.chapter.outputs.new_chapter == 'true'
         run: node .github/scripts/send-newsletter.js
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
