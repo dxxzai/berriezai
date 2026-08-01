@@ -224,3 +224,20 @@ button, select {
     font-size: 18px;
   }
 }
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+video,
+iframe,
+table {
+    max-width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
