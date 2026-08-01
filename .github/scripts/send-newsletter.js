@@ -46,9 +46,9 @@ async function main() {
       <p>
         Thank you for reading!
       <p style="font-size: 12px; color: #888;">
-        You are receiving this because you subscribed to Berriezai chapter updates.
+        You are receiving this because you subscribed to chapter updates.
         <br>
-        <a href="https://dxxzai.github.io/berriezai/unsubscribe">
+        <a href="https://dxxzai.github.io/berriezai/Unsubscribe">
             Unsubscribe
         </a>
         </p>

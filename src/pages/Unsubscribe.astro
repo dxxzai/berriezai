@@ -1,44 +1,55 @@
----
-import ReaderLayout from "../layouts/ReaderLayout.astro";
----
+<div class="subscribe">
+  <p>Enter your email to unsubcribe.</p>
 
-<ReaderLayout title="Unsubscribe">
-  <h1>Unsubscribe</h1>
+  <form id="subscribe-form">
+    <input
+      type="email"
+      id="email"
+      placeholder="Email address"
+      required
+    />
 
-  <p style="text-align: center;">
-    Enter your email address to stop receiving chapter updates.
-  </p>
-
-  <form id="unsubscribe-form">
-    <input id="email" type="email" required />
-    <button type="submit">Unsubscribe</button>
+    <button type="submit">
+      Unsubscribe
+    </button>
   </form>
+  <div class="subscribe-message">
+  <p id="subscribe-message" style="font-size: 16px;"></p></div>
+  </div>
 
-  <p id="message"></p>
+<script is:inline>
+  const form = document.getElementById("subscribe-form");
+  const emailInput = document.getElementById("email");
+  const message = document.getElementById("subscribe-message");
 
-  <script is:inline>
-    const form = document.querySelector("#unsubscribe-form");
-    const message = document.querySelector("#message");
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    message.textContent = "Unsubscribing...";
 
-      const email = document.querySelector("#email").value;
-
-      const res = await fetch(
+    try {
+      const response = await fetch(
         "https://berriezai-newsletter.dxxzaiamvs.workers.dev/unsubscribe",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ email })
+          body: JSON.stringify({
+            email: emailInput.value
+          })
         }
       );
 
-      message.textContent = res.ok
-        ? "You have been unsubscribed."
-        : "Something went wrong.";
-    });
-  </script>
-</ReaderLayout>
+      if (response.ok) {
+        message.textContent = "You have unsubscribed!";
+        form.reset();
+      } else {
+        message.textContent = "Something went wrong. Please try again.";
+}
+
+    } catch (error) {
+      message.textContent = "Could not connect. Please try again later.";
+    }
+  });
+</script>
