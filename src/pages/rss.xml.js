@@ -13,7 +13,7 @@ export async function GET(context) {
       .sort((a, b) => b.data.chapter - a.data.chapter)
       .map((chapter) => ({
         title: `Chapter ${chapter.data.chapter}`,
-        pubDate: new Date(),
+        pubDate: chapter.data.date,
         description: "A new chapter has been released!",
         link: `berriezai/chapters/${chapter.id}/`,
       })),
