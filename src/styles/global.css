@@ -192,6 +192,10 @@ body {
 .subscribe {
     text-align: center;
 }
+.subscribe-message {
+    font-style: italic;
+    margin: 1em;
+}
 
 input, select {
   width: 50%;
@@ -210,6 +214,7 @@ button, select {
     padding: 12px;
     
 }
+
 /* Mobile */
 @media (max-width: 600px) {
   body {

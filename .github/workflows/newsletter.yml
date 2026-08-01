@@ -1,0 +1,20 @@
+name: Send Chapter Newsletter
+
+on:
+  push:
+    paths:
+      - "src/content/chapters/**"
+
+jobs:
+  send-newsletter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Send newsletter
+        run: node .github/scripts/send-newsletter.js
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
