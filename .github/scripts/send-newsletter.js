@@ -19,7 +19,7 @@ async function main() {
   }
 
   const email = {
-    from: "Berriezai <updates@yourdomain.com>",
+    from: "Berriezai <updates@berriezai.cc>",
     to: contacts.data.map((contact) => contact.email),
     subject: "New Chapter Released!",
     html: `
@@ -32,7 +32,7 @@ async function main() {
 
       <p>
         <a href="https://dxxzai.github.io/berriezai/chapters/">
-          Read the latest chapter
+          Read the latest chapter.
         </a>
       </p>
 
