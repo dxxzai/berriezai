@@ -7,7 +7,7 @@ export async function GET(context) {
   return rss({
     title: "I'm a Young God, Won't You Raise Me?",
     description: "New Chapter Updates",
-    site: context.site,
+    site: "https://dxxzai.github.io/berriezai/",
 
     items: chapters
       .sort((a, b) => b.data.chapter - a.data.chapter)

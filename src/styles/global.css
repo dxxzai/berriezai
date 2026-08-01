@@ -181,6 +181,11 @@ body {
     padding: 0 1rem 1rem;
 }
 
+.chapter-list a {
+    color: inherit;
+    text-decoration: underline;
+}
+
 .chapter-list li {
     margin: 0.5rem 0;
 }
