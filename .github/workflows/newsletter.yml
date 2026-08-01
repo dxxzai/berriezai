@@ -38,3 +38,4 @@ jobs:
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+          CHAPTER_FILE: ${{ steps.chapter.outputs.chapter_file }}

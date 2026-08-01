@@ -1,5 +1,12 @@
 const apiKey = process.env.RESEND_API_KEY;
 const audienceId = process.env.RESEND_AUDIENCE_ID;
+const chapterFile = process.env.CHAPTER_FILE;
+const chapterSlug = chapterFile
+  .split("/")
+  .pop()
+  .replace(".mdx", "");
+const chapterUrl =
+  `https://dxxzai.github.io/berriezai/chapters/${chapterSlug}/`;
 
 async function main() {
   const contactsResponse = await fetch(
@@ -31,8 +38,8 @@ async function main() {
       </p>
 
       <p>
-        <a href="https://dxxzai.github.io/berriezai/chapters/">
-          Read the latest chapter.
+        <a href="${chapterUrl}">
+            Read Chapter ${chapterSlug.replace("chapter-", "")}
         </a>
       </p>
 
