@@ -14,17 +14,18 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
-
       - name: Check for new chapter
         id: chapter
         run: |
-          NEW_FILE=$(git diff --name-status HEAD^ HEAD | grep "^A.*src/content/chapters/chapter-" || true)
+          NEW_FILE=$(git diff --name-only HEAD^ HEAD | grep "src/content/chapters/chapter-" | tail -1 || true)
 
           echo "Detected files:"
           git diff --name-status HEAD^ HEAD
 
           if [ -n "$NEW_FILE" ]; then
             echo "new_chapter=true" >> $GITHUB_OUTPUT
+            echo "chapter_file=$NEW_FILE" >> $GITHUB_OUTPUT
+
             echo "New chapter detected:"
             echo "$NEW_FILE"
           else
