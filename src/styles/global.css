@@ -205,28 +205,21 @@ button, select {
     
 }
 /* Mobile */
+@media (max-width: 600px) {
+  body {
+    font-size: 18px;
+    line-height: 1.8;
+  }
 
-@media(max-width:800px) {
+  .reader {
+    padding: 1rem;
+  }
 
-    .reader {
-        margin: 20px 0;
-        padding: 45px 25px;
-        border-left: none;
-        border-right: none;
-    }
+  h1 {
+    font-size: 1.8rem;
+  }
 
-
-    .reader h1 {
-        font-size: 2rem;
-        margin-bottom: 50px;
-    }
-
-
-    .reader p,
-    .reader li,
-    .reader {
-        font-size: 1.1rem;
-        line-height: 1.9;
-    }
-
+  p {
+    font-size: 18px;
+  }
 }
