@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 2
 
-     - name: Check for new chapter
+      - name: Check for new chapter
         id: chapter
         run: |
           NEW_FILE=$(git diff --name-status HEAD^ HEAD | grep "^A.*src/content/chapters/chapter-" || true)
