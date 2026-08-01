@@ -30,6 +30,7 @@ import ReaderLayout from "../layouts/ReaderLayout.astro";
     const unsubscribeMessage = document.getElementById("unsubscribe-message");
 
     unsubscribeForm.addEventListener("submit", async (event) => {
+      console.log("Submit fired");
       event.preventDefault();
 
       unsubscribeMessage.textContent = "Unsubscribing...";
