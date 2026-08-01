@@ -1,6 +1,68 @@
-console.log("Newsletter script running");
+const apiKey = process.env.RESEND_API_KEY;
+const audienceId = process.env.RESEND_AUDIENCE_ID;
 
-console.log({
-  hasKey: !!process.env.RESEND_API_KEY,
-  hasAudience: !!process.env.RESEND_AUDIENCE_ID
-});
+async function main() {
+  const contactsResponse = await fetch(
+    `https://api.resend.com/audiences/${audienceId}/contacts`,
+    {
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+      },
+    }
+  );
+
+  const contacts = await contactsResponse.json();
+
+  if (!contacts.data || contacts.data.length === 0) {
+    console.log("No subscribers found.");
+    return;
+  }
+
+  const email = {
+    from: "Berriezai <updates@yourdomain.com>",
+    to: contacts.data.map((contact) => contact.email),
+    subject: "New Chapter Released!",
+    html: `
+      <h2>A new chapter is available!</h2>
+
+      <p>
+        A new chapter of <em>I'm a Young God, Won't You Raise Me?</em>
+        has been released.
+      </p>
+
+      <p>
+        <a href="https://dxxzai.github.io/berriezai/chapters/">
+          Read the latest chapter
+        </a>
+      </p>
+
+      <p>
+        Thank you for reading!
+      </p>
+    `,
+  };
+
+  const sendResponse = await fetch(
+    "https://api.resend.com/emails",
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(email),
+    }
+  );
+
+  const result = await sendResponse.json();
+
+  console.log(result);
+
+  if (!sendResponse.ok) {
+    throw new Error(JSON.stringify(result));
+  }
+
+  console.log("Newsletter sent!");
+}
+
+main();
