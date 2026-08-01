@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import ReaderLayout from "../../layouts/ReaderLayout.astro";
 import Comments from "../../components/Comments.astro";
 import Navigation from "../../components/Navigation.astro";
+import Subscribe from "../../components/Subscribe.astro";
 
 export async function getStaticPaths() {
   const chapters = await getCollection("chapters");
@@ -43,4 +44,5 @@ const next =
   <Content />
   <Navigation chapter={chapter} />
   <Comments />
+  <Subscribe />
 </ReaderLayout>
