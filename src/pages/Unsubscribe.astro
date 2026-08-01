@@ -9,7 +9,7 @@ import ReaderLayout from "../layouts/ReaderLayout.astro";
     <form id="unsubscribe-form">
       <input
         type="email"
-        id="email"
+        id="unsubscribe-email"
         placeholder="Email address"
         required
       />
@@ -25,14 +25,14 @@ import ReaderLayout from "../layouts/ReaderLayout.astro";
   </div>
 
   <script is:inline>
-    const form = document.getElementById("unsubscribe-form");
-    const emailInput = document.getElementById("email");
-    const message = document.getElementById("unsubscribe-message");
+    const unsubscribeForm = document.getElementById("unsubscribe-form");
+    const unsubscribeEmail = document.getElementById("unsubscribe-email");
+    const unsubscribeMessage = document.getElementById("unsubscribe-message");
 
-    form.addEventListener("submit", async (event) => {
+    unsubscribeForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
-      message.textContent = "Unsubscribing...";
+      unsubscribeMessage.textContent = "Unsubscribing...";
 
       try {
         const response = await fetch(
@@ -43,24 +43,26 @@ import ReaderLayout from "../layouts/ReaderLayout.astro";
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              email: emailInput.value,
+              email: unsubscribeEmail.value,
             }),
           }
         );
 
+        const result = await response.text();
+        console.log("Worker response:", result);
+
         if (response.ok) {
-          message.textContent = "You have unsubscribed!";
-          form.reset();
+          unsubscribeMessage.textContent =
+            "You have unsubscribed successfully.";
+          unsubscribeForm.reset();
         } else {
-          const error = await response.text();
-          console.error(error);
-          message.textContent =
+          unsubscribeMessage.textContent =
             "Something went wrong. Please try again.";
         }
 
       } catch (error) {
         console.error(error);
-        message.textContent =
+        unsubscribeMessage.textContent =
           "Could not connect. Please try again later.";
       }
     });
