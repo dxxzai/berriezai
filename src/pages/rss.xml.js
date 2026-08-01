@@ -17,5 +17,5 @@ export async function GET(context) {
         description: "A new chapter has been released!",
         link: `berriezai/chapters/${chapter.id}/`,
       })),
-  });
+  }); 
 }
