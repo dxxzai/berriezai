@@ -45,12 +45,13 @@ async function main() {
 
       <p>
         Thank you for reading!
-      </p>
       <p style="font-size: 12px; color: #888;">
-        If you no longer want to receive chapter updates,
-        <a href="{{{RESEND_UNSUBSCRIBE_URL}}}">
-            unsubscribe here
-        </a>.
+        You are receiving this because you subscribed to Berriezai chapter updates.
+        <br>
+        <a href="https://berriezai.cc/unsubscribe">
+            Unsubscribe
+        </a>
+        </p>
         </p>
     `,
   };

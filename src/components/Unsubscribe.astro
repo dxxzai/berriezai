@@ -1,0 +1,44 @@
+---
+import ReaderLayout from "../layouts/ReaderLayout.astro";
+---
+
+<ReaderLayout title="Unsubscribe">
+  <h1>Unsubscribe</h1>
+
+  <p>
+    Enter your email address to stop receiving chapter updates.
+  </p>
+
+  <form id="unsubscribe-form">
+    <input id="email" type="email" required />
+    <button>Unsubscribe</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script is:inline>
+    const form = document.querySelector("#unsubscribe-form");
+    const message = document.querySelector("#message");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.querySelector("#email").value;
+
+      const res = await fetch(
+        "https://berriezai-newsletter.dxxzaiamvs.workers.dev/unsubscribe",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email })
+        }
+      );
+
+      message.textContent = res.ok
+        ? "You have been unsubscribed."
+        : "Something went wrong.";
+    });
+  </script>
+</ReaderLayout>
