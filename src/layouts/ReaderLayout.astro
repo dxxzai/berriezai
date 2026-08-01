@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import "../styles/epub.css";
+import Subscribe from "../components/Subscribe.astro";
 
 const { title } = Astro.props;
 ---
@@ -17,7 +18,8 @@ const { title } = Astro.props;
 
     <article class="chapter">
     <slot />
-
+    <hr />
+    <Subscribe />
     </article>
 </main>
 
