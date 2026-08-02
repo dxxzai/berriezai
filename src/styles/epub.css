@@ -50,6 +50,9 @@
 }
 .systembox_wrap {
 	text-align: justify;
+	hyphens: auto;
+    -webkit-hyphens: auto;
+    word-spacing: -0.05em;
 }
 .flashback {
 	color: rgb(134, 138, 142) !important;
