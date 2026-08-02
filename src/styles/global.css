@@ -34,6 +34,7 @@ body {
     margin: 10px auto;
     padding: 40px 30px;
     box-sizing: border-box;
+
 }
 
 
@@ -88,15 +89,12 @@ body {
         Georgia,
         'Times New Roman',
         serif;
-    font-size: 1.35rem;
-    line-height: 2.1;
+    font-size: 18px;
+    line-height: 1.6;
     letter-spacing: 0.01em;
     margin: 0 0 1.5em;
 }
 
-.reader li {
-    font-size: 1.35rem;
-}
 
 
 
@@ -219,7 +217,7 @@ button, select {
 @media (max-width: 600px) {
   body {
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.6 !important;
   }
 
   .reader {
@@ -232,6 +230,10 @@ button, select {
 
   p {
     font-size: 18px !important;
+  }
+
+  .systembox {
+    margin: 1em;
   }
 }
 html,
