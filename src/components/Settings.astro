@@ -1,0 +1,156 @@
+
+
+<div id="reader-settings-button">
+✦
+</div>
+
+<div id="reader-settings-panel" class="hidden">
+
+<div class="reader-settings-header">
+    <h3>Reader</h3>
+    <button id="close-reader-settings">✕</button>
+</div>
+
+<div class="setting">
+
+    <div class="font-slider">
+    <span class="small-a">A</span>
+
+    <input
+        type="range"
+        id="font-slider"
+        min="14"
+        max="28"
+        value="18"
+    />
+
+    <span class="large-a">A</span>
+    </div>
+
+    <p id="font-size-display">18px</p>
+</div>
+<br />
+<hr>
+<br />
+<div class="theme-slider">
+  <span>☀</span>
+
+  <label class="switch">
+    <input type="checkbox" id="dark-mode-toggle">
+    <span class="slider"></span>
+  </label>
+
+  <span>☾</span>
+</div>
+</div>
+
+
+
+<script is:inline>
+const button = document.getElementById("reader-settings-button");
+const panel = document.getElementById("reader-settings-panel");
+const close = document.getElementById("close-reader-settings");
+
+button.addEventListener("click", () => {
+    panel.classList.toggle("hidden");
+});
+
+close.addEventListener("click", () => {
+    panel.classList.add("hidden");
+});
+</script>
+
+<script is:inline>
+
+const fontSlider = document.getElementById("font-slider");
+const fontDisplay = document.getElementById("font-size-display");
+const darkToggle = document.getElementById("dark-mode-toggle");
+
+
+// Font size
+
+let savedFont =
+    localStorage.getItem("reader-font-size") || 18;
+fontSlider.value = savedFont;
+
+
+function updateFontSize() {
+
+    document.querySelector(".chapter").style.setProperty(
+    "--reader-font-size",
+    fontSlider.value + "px"
+    );
+    fontDisplay.textContent =
+        fontSlider.value + "px";
+
+    localStorage.setItem(
+        "reader-font-size",
+        fontSlider.value
+    );
+}
+
+
+fontSlider.addEventListener(
+    "input",
+    updateFontSize
+);
+
+updateFontSize();
+
+
+// Dark mode
+
+let dark =
+    localStorage.getItem("dark-mode") === "true";
+
+
+function updateDarkMode() {
+
+    document.body.classList.toggle(
+        "dark",
+        dark
+    );
+    darkToggle.checked = dark;
+    localStorage.setItem(
+        "dark-mode",
+        dark
+    );
+}
+
+function updateGiscusTheme() {
+
+    const iframe = document.querySelector(
+        "iframe.giscus-frame"
+    );
+
+    if (!iframe) return;
+
+
+    iframe.contentWindow.postMessage(
+        {
+            giscus: {
+                setConfig: {
+                    theme: document.body.classList.contains("dark")
+                        ? "dark"
+                        : "light"
+                }
+            }
+        },
+        "https://giscus.app"
+    );
+}
+darkToggle.addEventListener(
+    "change",
+    () => {
+        dark = darkToggle.checked;
+        updateDarkMode();
+        updateGiscusTheme();
+    }
+);
+
+updateDarkMode();
+setTimeout(() => {
+    updateGiscusTheme();
+}, 1000);
+
+</script>

@@ -33,7 +33,6 @@
 	color: white;
 	padding: 2em;
 	margin: 2em;
-	line-height: 1.8em;
 	font-weight: bold;
 	text-align: justify;
 
@@ -72,10 +71,8 @@
 	padding: 2em;
 	margin: 2em;
 	border: 2px solid white;
-	line-height: 1.7em;
 }
 .fontcwrap {
-	line-height: 1.8em;
 	text-align: justify;
 	text-indent: 0.8em;
 	font-weight: bold;
@@ -86,7 +83,6 @@
 .fieldset {
 	padding: 2em;
 	margin: 2em;
-	line-height: 1.8em;
 	text-align: center;
 	border: 2px solid;
 }
@@ -97,7 +93,6 @@
 	padding: 2em;
 	margin: 2em;
 	color: black;
-	line-height: 1.8em;
 	text-indent: 0.8em;
 	font-weight: bold;
 	text-align: justify;
@@ -107,7 +102,6 @@
 	border: 2px solid red;
 	padding: 2em;
 	margin: 2em;
-	line-height: 1.8em;
 	font-weight: bold;
 	text-align: justify;
 }
