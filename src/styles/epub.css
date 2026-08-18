@@ -140,7 +140,7 @@
 }
 .glitch_b3 {
 	box-shadow: -3px -3px 0 rgb(255, 0, 85), 3px 3px 0 rgb(0, 229, 255), -6px -6px 0 rgba(255, 0, 85, 0.35), 6px 6px 0 rgba(0, 229, 255, 0.35);
-	margin: 2em;
+	margin: 1em;
 }
 .card_wrapper {
 	background: rgb(255, 236, 232);
