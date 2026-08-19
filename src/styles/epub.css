@@ -181,6 +181,11 @@ display: block;
 	display: block;
 	animation: glitchFlash 1.2s infinite;
 }
+
+.skew{
+  transform: skewX(-20deg);
+  display: inline-block;
+}
 @keyframes panicShake{
     0%   { transform:translate(0, 0); }
     20%  { transform:translate(-0.5px, 0.5px); }
