@@ -25,20 +25,20 @@ const next =
 <nav class="chapter-nav">
 
   {previous ? (
-    <a href={`/berriezai/chapters/${previous.id}`} class="nav-button previous">
+    <a href={`/chapters/${previous.id}`} class="nav-button previous">
       ← Chapter {previous.data.chapter}
     </a>
   ) : (
     <span></span>
   )}
 
-  <a href="/berriezai/" class="nav-button home">
+  <a href="berriezai.cc" class="nav-button home">
     Home
   </a>
 
 
   {next ? (
-    <a href={`/berriezai/chapters/${next.id}`} class="nav-button next">
+    <a href={`/chapters/${next.id}`} class="nav-button next">
       Chapter {next.data.chapter} →
     </a>
   ) : (

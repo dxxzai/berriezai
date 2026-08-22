@@ -56,7 +56,7 @@ chapters.sort((a, b) => a.data.chapter - b.data.chapter);
 <head>
   <meta charset="UTF-8" />
   <title>I'm a Young God, Won't You Raise Me?</title>
-  <link rel="icon" type="image/x-icon" href="/berriezai/public/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
 </head>
 
 <body>
@@ -94,7 +94,7 @@ After all, I know everything about this game.</p>
         )
         .map((chapter) => (
           <li>
-            <a href={`/berriezai/chapters/${chapter.id}`}>
+            <a href={`/chapters/${chapter.id}`}>
               Chapter {chapter.data.chapter}
             </a>
           </li>
