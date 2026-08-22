@@ -275,17 +275,6 @@ button, select {
     display: none;
 }
 
-.reader-settings-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-}
-
-
-#close-reader-settings {
-    margin: 0;
-}
 /* Font slider */
 
 .font-slider {
@@ -311,6 +300,7 @@ button, select {
 #font-size-display {
     text-align: center;
     margin: .5rem 0 0;
+    display: none
 }
 
 
