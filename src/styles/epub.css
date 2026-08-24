@@ -39,6 +39,7 @@
 }
 .systembox {
 	padding: 1.5em;
+	font-size: 16.2px;
 	margin: 1em;
 	line-height: 1.6 !important;
 	text-align: center;
@@ -54,6 +55,12 @@
     word-spacing: -0.05em;
 	text-indent: 0.8em;
 }
+.systembox_wrap_j {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  word-spacing: -0.05em;
+}
 .flashback {
 	color: rgb(134, 138, 142) !important;
 }
@@ -61,7 +68,7 @@
 	text-shadow: -2px 0 rgb(255, 0, 85), 2px 0 rgb(0, 229, 255);
 }
 .message_wrap {
-	background: rgb(245, 245, 245);
+	background: rgb(245, 245, 245) !important; 
 	padding: 1em;
 }
 .messagebox {
@@ -71,6 +78,73 @@
 	padding: 2em;
 	margin: 2em;
 	border: 2px solid white;
+}
+.messenger_main {
+  padding: 20px 10px;
+  margin-top: 0 !important;
+  background: rgb(245, 245, 245);
+  margin-bottom: 1em;
+}
+.messenger_wrap {
+  width: 100%;
+}
+.chat_date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 5px 0 !important;
+  padding: 0;
+}
+
+.chat_date span {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size:12.6px;
+  background-color: rgb(216, 224, 232);
+  color: rgb(85, 85, 85);
+  border-radius: 10px;
+  line-height: 1.4;
+}
+
+.chat_name {
+  margin-bottom: 2px !important;
+  font-size: 12.6px !important;
+  color: rgb(105, 105, 105);
+}
+
+.chat_left_wrap {
+  display: flex;
+  margin-bottom: 1em !important;
+  margin-top: 0 !important;
+  padding-right: 0.5em;
+}
+
+.chat_left_container {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+.chat_left {
+  display: block;
+  color: black;
+  text-align: left;
+  position: relative;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  padding: 3px 7px;
+  width: fit-content;
+  max-width: 85%;
+  align-items: center;
+  height: fit-content;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-end;
+  overflow-wrap: break-word;
+}
+.chat_left p {
+	margin: 0;
 }
 .fontcwrap {
 	text-align: justify;
@@ -104,6 +178,7 @@
 	margin: 2em;
 	font-weight: bold;
 	text-align: justify;
+	word-break: break-all;
 }
 .R_news_wrapper {
 	background: rgb(255, 64, 83);

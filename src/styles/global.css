@@ -105,7 +105,9 @@ body.dark {
     letter-spacing: 0.01em;
     margin: 0 0 1.5em;
 }
-
+.systembox p {
+    font-size: calc(var(--reader-font-size) - 1.8px);
+}
 .chapter li {
     font-size: var(--reader-font-size);
 }
@@ -155,7 +157,9 @@ body.dark {
 .hyunoh p,
 .systembox.glitch_b3 h1,
 .card_wrapper p,
-.bigbox2_monitor p {
+.bigbox2_monitor p,
+.bigbox2_pixelR p,
+.chat_left p {
     margin: 0;
     line-height: 1.8;
 }
