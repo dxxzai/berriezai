@@ -49,14 +49,14 @@
 	border-image: linear-gradient(to right, rgb(79, 172, 254), rgb(67, 203, 254)) 1;
 }
 .systembox_wrap {
-	text-align: justify;
+	text-align: left;
 	hyphens: auto;
     -webkit-hyphens: auto;
     word-spacing: -0.05em;
 	text-indent: 0.8em;
 }
 .systembox_wrap_j {
-  text-align: justify;
+  text-align: left;
   hyphens: auto;
   -webkit-hyphens: auto;
   word-spacing: -0.05em;
@@ -143,8 +143,44 @@
   align-items: flex-end;
   overflow-wrap: break-word;
 }
-.chat_left p {
+.chat_left p,
+.chat_right p {
 	margin: 0;
+}
+
+.chat_right_wrap {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 10px !important;
+  margin-top: 0 !important;
+  padding-left: 0.5em;
+}
+
+.chat_right_container {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  flex-direction: row-reverse;
+}
+
+.chat_right {
+  display: block;
+  color: black;
+  text-align: left;
+  position: relative;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-image: linear-gradient(0deg, rgb(220, 220, 220), rgb(220, 220, 220)) !important;
+  background-color: rgb(220, 220, 220);
+  padding: 3px 7px;
+  width: fit-content;
+  max-width: 85%;
+  height: fit-content;
+  margin: 0 !important;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-end;
 }
 .fontcwrap {
 	text-align: justify;
